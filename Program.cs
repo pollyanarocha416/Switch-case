@@ -9,6 +9,9 @@ namespace Switch_case
             int tempo = 0;
             char escolha;
             
+            inicio: //goto
+            Console.Clear();
+
             // v1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\nA viagem de Belo Horizonte/BH a Vitoria/ES em minutos: ");
             Console.Write("Escolha o transporte: [a]Avião | [c]Carro | [o]Ônibus : ");
@@ -36,7 +39,16 @@ namespace Switch_case
                 Console.WriteLine("Transporte indisponivel");
             }else
             {
-                Console.WriteLine("Para o transporte escolhido o tempo é: {0}", tempo);
+                Console.WriteLine("\nPara o transporte escolhido o tempo é: {0} minutos.", tempo);
+            }
+            //pra continuar o calculo Volta ao inicio do codigo
+            Console.Write("\nCalcular outro transporte? [s/n]: ");
+            escolha = Char.Parse(Console.ReadLine());
+            if (escolha=='s'|| escolha=='S'){
+                goto inicio;
+            }else{
+                Console.Clear();
+                Console.WriteLine("Fim do programa");
             }
         }
     }
